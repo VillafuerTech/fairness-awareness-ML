@@ -1,3 +1,106 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.pyo
+*.pkl
+*.pickle
+
+# Virtual envs
+.env
 .venv
+env/
+venv/
+*/.venv/
+*/env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# -----------------------------
+# Jupyter / IPython
+# -----------------------------
+.ipynb_checkpoints/
+.profile_default/
+ipython_config.py
+
+# JupyterLab workspace
+.jupyter/
+.lab/
+.jupyterlab-settings/
+
+# -----------------------------
+# Editors / IDEs
+# -----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
 .DS_Store
-__pycache__
+
+# -----------------------------
+# Logs / temp
+# -----------------------------
+logs/
+*.log
+*.tmp
+tmp/
+.temp/
+.cache/
+**/__pycache__/
+
+# -----------------------------
+# ML artifacts
+# -----------------------------
+
+# MLflow tracking directory
+mlruns/
+
+# Optuna DB and study artifacts
+optuna.sqlite3
+*.db
+*.db-journal
+
+# Model artifacts
+models/
+checkpoints/
+*.pt
+*.pth
+*.h5
+*.joblib
+
+# -----------------------------
+# Data
+# -----------------------------
+# Ignore everything in data/
+data/*
+
+# ...but keep the *starting point* data in data/raw/
+!data/raw/
+!data/raw/**
+
+# Optionally keep helpful docs about data
+!data/README.md
+!data/.gitkeep
+
+# If you have a specific canonical raw file, you can be extra explicit:
+# !data/raw/adult_raw.csv
+# !data/raw/adult.csv
+
+# Ignore other derived data subdirs (even if created later)
+data/processed/
+data/interim/
+data/external/
+
+# -----------------------------
+# OS-specific
+# -----------------------------
+Thumbs.db
+Desktop.ini
+
