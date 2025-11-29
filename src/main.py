@@ -4,6 +4,7 @@ from pathlib import Path
 from src.preprocessing.preprocess import build_preprocessing_pipeline
 from src.models.train_lr import train_lr
 from src.models.train_rf import train_rf
+from src.models.train_xgb import train_xgb
 from src.metrics.fairness import compute_fairness_metrics
 from src.utils.utils import save_predictions
 
@@ -100,6 +101,14 @@ def main():
 
     print("\n STEP 1 COMPLETED SUCCESSFULLY ")
 
+    print("\nTraining XGBoost...")
+    xgb_clf = train_xgb(preprocess, X_train, y_train)
+    y_pred_xgb = xgb_clf.predict(X_test)
+
+    save_predictions("xgb", y_test, y_pred_xgb, X_test.index)
+
+    print_performance("XGBoost", y_test, y_pred_xgb)
+    print_fairness("XGBoost", y_test, y_pred_xgb, df_test)
 
 if __name__ == "__main__":
     main()
