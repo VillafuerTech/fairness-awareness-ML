@@ -99,8 +99,6 @@ def main():
     print_performance("Random Forest", y_test, y_pred_rf)
     print_fairness("Random Forest", y_test, y_pred_rf, df_test)
 
-    print("\n STEP 1 COMPLETED SUCCESSFULLY ")
-
     print("\nTraining XGBoost...")
     xgb_clf = train_xgb(preprocess, X_train, y_train)
     y_pred_xgb = xgb_clf.predict(X_test)
@@ -109,6 +107,8 @@ def main():
 
     print_performance("XGBoost", y_test, y_pred_xgb)
     print_fairness("XGBoost", y_test, y_pred_xgb, df_test)
+
+    print("\n STEP 1 COMPLETED ")
 
 if __name__ == "__main__":
     main()
